@@ -16,8 +16,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(
         ServerStatusApiService $apiService,
-    ): Response
-    {
+    ): Response {
         $lastActiveUserCount = $apiService->fetchLastActiveUserCount();
 
         return $this->render('home/index.html.twig', [

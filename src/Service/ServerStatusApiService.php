@@ -11,11 +11,9 @@ class ServerStatusApiService
 {
     public function __construct(
         private readonly HttpClientInterface $httpClient,
-
         #[Autowire('%env(API_URL)%')]
         private readonly string $apiUrl,
-    )
-    {
+    ) {
     }
 
     public function fetchLastActiveUserCount(): ActiveUserCount
